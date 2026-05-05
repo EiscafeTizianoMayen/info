@@ -13,17 +13,9 @@
       --surface:#ffffff;
       --surface-soft:#fafafa;
       --text:#111111;
-      --muted:#6b6f76;
+      --muted:#5f6368;
       --line:#e4e4e4;
-      --shadow:0 10px 30px rgba(0,0,0,.07);
-
-      --blue:#2563d8;
-      --blue-soft:#eef5ff;
-      --blue-line:#cfe1ff;
-
-      --orange:#a46a12;
-      --orange-soft:#fff6e8;
-      --orange-line:#f1d8ae;
+      --shadow:0 8px 24px rgba(0,0,0,.07);
 
       --green:#1fa65a;
       --green-soft:#e9f7ee;
@@ -32,10 +24,22 @@
       --red:#d93b3b;
       --red-soft:#fdeaea;
       --red-line:#f5c5c5;
+
+      --blue:#2f73d9;
+      --blue-soft:#eef5ff;
+      --blue-line:#cfe1ff;
+
+      --orange:#a46a12;
+      --orange-soft:#fff6e8;
+      --orange-line:#f1d8ae;
     }
 
     *{
       box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
     }
 
     body{
@@ -47,29 +51,26 @@
 
     .page{
       min-height:100vh;
-      padding:22px 14px;
+      padding:22px 14px 18px;
     }
 
-    .hero-card,
-    .link-card{
+    .main-card{
       max-width:920px;
       margin:0 auto 22px;
       background:var(--surface);
       border:1px solid var(--line);
       border-radius:28px;
       box-shadow:var(--shadow);
-    }
-
-    .hero-card{
-      padding:28px 18px 26px;
+      padding:28px 18px 28px;
+      overflow:hidden;
     }
 
     .header{
       text-align:center;
-      margin-bottom:24px;
+      margin-bottom:26px;
     }
 
-    .logo-wrap{
+    .logo-box{
       width:min(320px, 78%);
       margin:0 auto 18px;
       background:#ffffff;
@@ -86,7 +87,7 @@
       border-radius:22px;
     }
 
-    .brand-small{
+    .brand{
       margin:0 0 6px;
       color:var(--muted);
       font-size:22px;
@@ -96,8 +97,8 @@
 
     h1{
       margin:0;
-      font-size:54px;
-      line-height:1.05;
+      font-size:56px;
+      line-height:1.04;
       letter-spacing:-1.7px;
       font-weight:950;
     }
@@ -111,7 +112,7 @@
       line-height:1.35;
     }
 
-    .date-card{
+    .date-pill{
       width:max-content;
       max-width:100%;
       margin:0 auto 26px;
@@ -126,12 +127,12 @@
       box-shadow:0 4px 14px rgba(0,0,0,.04);
     }
 
-    .calendar-icon{
+    .calendar{
       font-size:27px;
       line-height:1;
     }
 
-    .date{
+    .date-text{
       font-size:24px;
       font-weight:900;
       color:#303134;
@@ -184,7 +185,7 @@
       line-height:1.15;
     }
 
-    .badge{
+    .status-badge{
       flex-shrink:0;
       display:inline-flex;
       align-items:center;
@@ -198,19 +199,25 @@
       border:2px solid transparent;
     }
 
-    .badge.open{
+    .status-badge.open{
       background:var(--green-soft);
       color:var(--green);
       border-color:var(--green-line);
     }
 
-    .badge.closed{
+    .status-badge.closed{
       background:var(--red-soft);
       color:var(--red);
       border-color:var(--red-line);
     }
 
-    .link-card{
+    .links-card{
+      max-width:920px;
+      margin:0 auto 18px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:28px;
+      box-shadow:var(--shadow);
       padding:18px;
     }
 
@@ -232,7 +239,7 @@
       border-radius:999px;
       border:2px solid transparent;
       box-shadow:0 4px 14px rgba(0,0,0,.035);
-      transition:transform .15s ease, opacity .15s ease, background .15s ease;
+      transition:transform .15s ease, opacity .15s ease;
     }
 
     .button:hover{
@@ -284,17 +291,21 @@
         padding:18px 10px;
       }
 
-      .hero-card{
+      .main-card,
+      .links-card{
         border-radius:26px;
-        padding:24px 16px 22px;
       }
 
-      .logo-wrap{
+      .main-card{
+        padding:24px 16px 24px;
+      }
+
+      .logo-box{
         width:min(300px, 82%);
         border-radius:30px;
       }
 
-      .brand-small{
+      .brand{
         font-size:21px;
       }
 
@@ -307,11 +318,11 @@
         font-size:21px;
       }
 
-      .date-card{
+      .date-pill{
         padding:11px 20px;
       }
 
-      .date{
+      .date-text{
         font-size:21px;
       }
 
@@ -323,7 +334,7 @@
         font-size:22px;
       }
 
-      .badge{
+      .status-badge{
         min-width:136px;
         font-size:18px;
         padding:10px 14px;
@@ -340,12 +351,12 @@
         padding:14px 8px;
       }
 
-      .hero-card,
-      .link-card{
+      .main-card,
+      .links-card{
         border-radius:24px;
       }
 
-      .logo-wrap{
+      .logo-box{
         width:min(285px, 86%);
       }
 
@@ -357,11 +368,11 @@
         font-size:19px;
       }
 
-      .date{
+      .date-text{
         font-size:18px;
       }
 
-      .calendar-icon{
+      .calendar{
         font-size:23px;
       }
 
@@ -370,7 +381,7 @@
         align-items:flex-start;
       }
 
-      .badge{
+      .status-badge{
         width:100%;
       }
     }
@@ -380,20 +391,21 @@
 <body>
   <div class="page">
 
-    <section class="hero-card">
-      <div class="header">
-        <div class="logo-wrap">
+    <section class="main-card">
+
+      <header class="header">
+        <div class="logo-box">
           <img class="logo" src="logo-tiziano.png" alt="Eiscafe Tiziano Logo">
         </div>
 
-        <div class="brand-small">Eiscafe Tiziano</div>
+        <div class="brand">Eiscafe Tiziano</div>
         <h1>Öffnungszeiten</h1>
         <div class="subtitle">Mitnehmen · Innen / Gästebereich · Lieferservice</div>
-      </div>
+      </header>
 
-      <section class="date-card">
-        <div class="calendar-icon">📅</div>
-        <div class="date" id="todayDate">Wird geladen...</div>
+      <section class="date-pill">
+        <div class="calendar">📅</div>
+        <div class="date-text" id="todayDate">wird geladen…</div>
       </section>
 
       <section class="status-list">
@@ -403,7 +415,7 @@
             <span class="status-dot closed" id="dot-mitnehmen"></span>
             <div class="status-title">Mitnehmen</div>
           </div>
-          <div class="badge closed" id="status-mitnehmen">Wird geladen...</div>
+          <div class="status-badge closed" id="status-mitnehmen">wird geladen…</div>
         </div>
 
         <div class="status-card">
@@ -411,7 +423,7 @@
             <span class="status-dot closed" id="dot-innenbereich"></span>
             <div class="status-title">Innen / Gästebereich</div>
           </div>
-          <div class="badge closed" id="status-innenbereich">Wird geladen...</div>
+          <div class="status-badge closed" id="status-innenbereich">wird geladen…</div>
         </div>
 
         <div class="status-card">
@@ -419,13 +431,14 @@
             <span class="status-dot closed" id="dot-lieferservice"></span>
             <div class="status-title">Lieferservice</div>
           </div>
-          <div class="badge closed" id="status-lieferservice">Wird geladen...</div>
+          <div class="status-badge closed" id="status-lieferservice">wird geladen…</div>
         </div>
 
       </section>
+
     </section>
 
-    <section class="link-card">
+    <section class="links-card">
       <div class="buttons">
         <a class="button blue" href="https://eiscafetizianomayen.github.io/Liefermenu/">zum Lieferservice-Menü</a>
         <a class="button orange" href="https://eiscafetizianomayen.github.io/Liefergebiete/">Zu den Liefergebieten</a>
@@ -457,7 +470,7 @@
       { closed: true }
 
       Wenn geöffnet:
-      { open: "12:00", close: "21:00" }
+      { open: "11:00", close: "21:00" }
     */
 
     const OPENING_HOURS = {
