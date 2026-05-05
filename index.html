@@ -10,12 +10,11 @@
   <style>
     :root{
       --bg:#f3f3f3;
-      --surface:#ffffff;
-      --surface-soft:#fafafa;
+      --card:#ffffff;
+      --soft:#fafafa;
       --text:#111111;
-      --muted:#5f6368;
+      --muted:#64686f;
       --line:#e4e4e4;
-      --shadow:0 8px 24px rgba(0,0,0,.07);
 
       --green:#1fa65a;
       --green-soft:#e9f7ee;
@@ -32,14 +31,12 @@
       --orange:#a46a12;
       --orange-soft:#fff6e8;
       --orange-line:#f1d8ae;
+
+      --shadow:0 8px 22px rgba(0,0,0,.06);
     }
 
     *{
       box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
     }
 
     body{
@@ -51,89 +48,82 @@
 
     .page{
       min-height:100vh;
-      padding:22px 14px 18px;
+      padding:12px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
     }
 
-    .main-card{
-      max-width:920px;
-      margin:0 auto 22px;
-      background:var(--surface);
+    .card{
+      width:100%;
+      max-width:760px;
+      background:var(--card);
       border:1px solid var(--line);
-      border-radius:28px;
+      border-radius:26px;
       box-shadow:var(--shadow);
-      padding:28px 18px 28px;
-      overflow:hidden;
+      padding:18px 16px 16px;
     }
 
     .header{
       text-align:center;
-      margin-bottom:26px;
+      margin-bottom:16px;
     }
 
     .logo-box{
-      width:min(320px, 78%);
-      margin:0 auto 18px;
+      width:145px;
+      max-width:42%;
+      margin:0 auto 10px;
       background:#ffffff;
       border:1px solid var(--line);
-      border-radius:32px;
-      box-shadow:0 4px 18px rgba(0,0,0,.05);
-      padding:10px;
+      border-radius:20px;
+      box-shadow:0 3px 12px rgba(0,0,0,.045);
+      padding:6px;
     }
 
     .logo{
       width:100%;
       height:auto;
       display:block;
-      border-radius:22px;
-    }
-
-    .brand{
-      margin:0 0 6px;
-      color:var(--muted);
-      font-size:22px;
-      font-weight:900;
-      letter-spacing:.2px;
+      border-radius:14px;
     }
 
     h1{
       margin:0;
-      font-size:56px;
-      line-height:1.04;
-      letter-spacing:-1.7px;
+      font-size:34px;
+      line-height:1.05;
+      letter-spacing:-.8px;
       font-weight:950;
     }
 
     .subtitle{
-      margin:18px auto 0;
-      max-width:760px;
+      margin:8px auto 0;
       color:var(--muted);
-      font-size:25px;
+      font-size:16px;
       font-weight:700;
-      line-height:1.35;
+      line-height:1.3;
     }
 
     .date-pill{
       width:max-content;
       max-width:100%;
-      margin:0 auto 26px;
-      background:var(--surface-soft);
-      border:2px solid var(--line);
+      margin:0 auto 16px;
+      background:var(--soft);
+      border:1.5px solid var(--line);
       border-radius:999px;
-      padding:12px 28px;
+      padding:8px 17px;
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:12px;
-      box-shadow:0 4px 14px rgba(0,0,0,.04);
+      gap:9px;
     }
 
     .calendar{
-      font-size:27px;
+      font-size:19px;
       line-height:1;
     }
 
     .date-text{
-      font-size:24px;
+      font-size:16px;
       font-weight:900;
       color:#303134;
       white-space:nowrap;
@@ -141,31 +131,32 @@
 
     .status-list{
       display:grid;
-      gap:16px;
+      gap:10px;
+      margin-bottom:14px;
     }
 
     .status-card{
       background:#ffffff;
       border:1px solid #e8e8e8;
-      border-radius:22px;
-      box-shadow:0 4px 14px rgba(0,0,0,.035);
-      padding:21px 24px;
+      border-radius:18px;
+      box-shadow:0 3px 10px rgba(0,0,0,.03);
+      padding:14px 15px;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      gap:16px;
+      gap:12px;
     }
 
     .status-left{
       display:flex;
       align-items:center;
-      gap:15px;
+      gap:11px;
       min-width:0;
     }
 
     .status-dot{
-      width:18px;
-      height:18px;
+      width:13px;
+      height:13px;
       border-radius:50%;
       flex-shrink:0;
     }
@@ -179,7 +170,7 @@
     }
 
     .status-title{
-      font-size:25px;
+      font-size:20px;
       font-weight:950;
       color:#202124;
       line-height:1.15;
@@ -190,13 +181,13 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-width:154px;
-      padding:11px 18px;
+      min-width:118px;
+      padding:8px 13px;
       border-radius:999px;
       font-weight:950;
-      font-size:20px;
+      font-size:16px;
       text-align:center;
-      border:2px solid transparent;
+      border:1.5px solid transparent;
     }
 
     .status-badge.open{
@@ -211,20 +202,10 @@
       border-color:var(--red-line);
     }
 
-    .links-card{
-      max-width:920px;
-      margin:0 auto 18px;
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:28px;
-      box-shadow:var(--shadow);
-      padding:18px;
-    }
-
     .buttons{
       display:grid;
       grid-template-columns:1fr;
-      gap:14px;
+      gap:9px;
     }
 
     .button{
@@ -234,17 +215,11 @@
       text-decoration:none;
       text-align:center;
       font-weight:950;
-      font-size:21px;
-      padding:17px 18px;
+      font-size:16px;
+      padding:11px 14px;
       border-radius:999px;
-      border:2px solid transparent;
-      box-shadow:0 4px 14px rgba(0,0,0,.035);
-      transition:transform .15s ease, opacity .15s ease;
-    }
-
-    .button:hover{
-      transform:translateY(-1px);
-      opacity:.92;
+      border:1.5px solid transparent;
+      box-shadow:0 3px 10px rgba(0,0,0,.03);
     }
 
     .button.blue{
@@ -265,69 +240,30 @@
       border-color:var(--red-line);
     }
 
-    footer{
-      max-width:920px;
-      margin:0 auto;
+    .footer{
+      margin-top:12px;
       text-align:center;
-      padding:8px 18px 18px;
       color:var(--muted);
-      font-size:14px;
+      font-size:12px;
+      line-height:1.35;
     }
 
     .footer-name{
       font-weight:900;
       color:#202124;
-      margin-bottom:4px;
     }
 
-    @media (min-width:760px){
+    @media (min-width:700px){
       .buttons{
         grid-template-columns:1fr 1fr 1fr;
       }
-    }
-
-    @media (max-width:620px){
-      .page{
-        padding:18px 10px;
-      }
-
-      .main-card,
-      .links-card{
-        border-radius:26px;
-      }
-
-      .main-card{
-        padding:24px 16px 24px;
-      }
 
       .logo-box{
-        width:min(300px, 82%);
-        border-radius:30px;
-      }
-
-      .brand{
-        font-size:21px;
+        width:165px;
       }
 
       h1{
-        font-size:44px;
-        letter-spacing:-1.2px;
-      }
-
-      .subtitle{
-        font-size:21px;
-      }
-
-      .date-pill{
-        padding:11px 20px;
-      }
-
-      .date-text{
-        font-size:21px;
-      }
-
-      .status-card{
-        padding:19px 18px;
+        font-size:40px;
       }
 
       .status-title{
@@ -335,47 +271,63 @@
       }
 
       .status-badge{
-        min-width:136px;
-        font-size:18px;
-        padding:10px 14px;
-      }
-
-      .button{
-        font-size:19px;
-        padding:15px 16px;
+        font-size:17px;
+        min-width:126px;
       }
     }
 
-    @media (max-width:430px){
+    @media (max-width:390px){
       .page{
-        padding:14px 8px;
+        padding:9px;
       }
 
-      .main-card,
-      .links-card{
+      .card{
+        padding:15px 12px 13px;
         border-radius:24px;
       }
 
       .logo-box{
-        width:min(285px, 86%);
+        width:125px;
       }
 
       h1{
-        font-size:38px;
+        font-size:29px;
       }
 
       .subtitle{
-        font-size:19px;
+        font-size:14px;
+      }
+
+      .date-pill{
+        padding:7px 13px;
+        margin-bottom:13px;
       }
 
       .date-text{
+        font-size:14px;
+      }
+
+      .status-card{
+        padding:12px 12px;
+      }
+
+      .status-title{
         font-size:18px;
       }
 
-      .calendar{
-        font-size:23px;
+      .status-badge{
+        min-width:106px;
+        font-size:14px;
+        padding:7px 11px;
       }
 
+      .button{
+        font-size:15px;
+        padding:10px 12px;
+      }
+    }
+
+    @media (max-width:340px){
       .status-card{
         flex-direction:column;
         align-items:flex-start;
@@ -391,15 +343,14 @@
 <body>
   <div class="page">
 
-    <section class="main-card">
+    <main class="card">
 
       <header class="header">
         <div class="logo-box">
           <img class="logo" src="logo-tiziano.png" alt="Eiscafe Tiziano Logo">
         </div>
 
-        <div class="brand">Eiscafe Tiziano</div>
-        <h1>Öffnungszeiten</h1>
+        <h1>Eiscafe Tiziano</h1>
         <div class="subtitle">Mitnehmen · Innen / Gästebereich · Lieferservice</div>
       </header>
 
@@ -436,20 +387,18 @@
 
       </section>
 
-    </section>
-
-    <section class="links-card">
-      <div class="buttons">
+      <section class="buttons">
         <a class="button blue" href="https://eiscafetizianomayen.github.io/Liefermenu/">zum Lieferservice-Menü</a>
         <a class="button orange" href="https://eiscafetizianomayen.github.io/Liefergebiete/">Zu den Liefergebieten</a>
         <a class="button red" href="https://eiscafetizianomayen.github.io/Oeffnungszeiten/">Zu den Öffnungszeiten</a>
-      </div>
-    </section>
+      </section>
 
-    <footer>
-      <div class="footer-name">Eiscafe Tiziano</div>
-      <div>Marktstraße 18 · 56727 Mayen</div>
-    </footer>
+      <div class="footer">
+        <div class="footer-name">Eiscafe Tiziano</div>
+        <div>Marktstraße 18 · 56727 Mayen</div>
+      </div>
+
+    </main>
 
   </div>
 
