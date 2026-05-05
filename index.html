@@ -13,23 +13,23 @@
       --surface:#ffffff;
       --surface-soft:#fafafa;
       --text:#111111;
-      --muted:#5f6368;
-      --line:#dddddd;
-      --shadow:0 6px 18px rgba(0,0,0,.08);
+      --muted:#6b6f76;
+      --line:#e4e4e4;
+      --shadow:0 10px 30px rgba(0,0,0,.07);
 
-      --blue:#2f73d9;
+      --blue:#2563d8;
       --blue-soft:#eef5ff;
       --blue-line:#cfe1ff;
 
-      --orange:#d98218;
-      --orange-soft:#fff4e4;
-      --orange-line:#f5d6a8;
+      --orange:#a46a12;
+      --orange-soft:#fff6e8;
+      --orange-line:#f1d8ae;
 
       --green:#1fa65a;
       --green-soft:#e9f7ee;
       --green-line:#cdebd8;
 
-      --red-status:#d93b3b;
+      --red:#d93b3b;
       --red-soft:#fdeaea;
       --red-line:#f5c5c5;
     }
@@ -47,54 +47,68 @@
 
     .page{
       min-height:100vh;
-      display:flex;
-      flex-direction:column;
+      padding:22px 14px;
     }
 
-    header{
+    .hero-card,
+    .link-card{
+      max-width:920px;
+      margin:0 auto 22px;
       background:var(--surface);
-      border-bottom:1px solid var(--line);
+      border:1px solid var(--line);
+      border-radius:28px;
       box-shadow:var(--shadow);
     }
 
-    .header-inner{
-      max-width:900px;
-      margin:0 auto;
-      padding:26px 18px 24px;
+    .hero-card{
+      padding:28px 18px 26px;
+    }
+
+    .header{
       text-align:center;
+      margin-bottom:24px;
+    }
+
+    .logo-wrap{
+      width:min(320px, 78%);
+      margin:0 auto 18px;
+      background:#ffffff;
+      border:1px solid var(--line);
+      border-radius:32px;
+      box-shadow:0 4px 18px rgba(0,0,0,.05);
+      padding:10px;
     }
 
     .logo{
-      max-width:210px;
-      width:70%;
+      width:100%;
       height:auto;
       display:block;
-      margin:0 auto 16px;
-      border-radius:28px;
+      border-radius:22px;
+    }
+
+    .brand-small{
+      margin:0 0 6px;
+      color:var(--muted);
+      font-size:22px;
+      font-weight:900;
+      letter-spacing:.2px;
     }
 
     h1{
       margin:0;
       font-size:54px;
       line-height:1.05;
-      letter-spacing:-1.5px;
+      letter-spacing:-1.7px;
       font-weight:950;
     }
 
     .subtitle{
-      margin:18px 0 0;
+      margin:18px auto 0;
+      max-width:760px;
       color:var(--muted);
-      font-size:24px;
-      font-weight:800;
-      line-height:1.3;
-    }
-
-    main{
-      flex:1;
-      max-width:900px;
-      width:100%;
-      margin:0 auto;
-      padding:26px 18px 34px;
+      font-size:25px;
+      font-weight:700;
+      line-height:1.35;
     }
 
     .date-card{
@@ -113,7 +127,7 @@
     }
 
     .calendar-icon{
-      font-size:28px;
+      font-size:27px;
       line-height:1;
     }
 
@@ -121,20 +135,20 @@
       font-size:24px;
       font-weight:900;
       color:#303134;
+      white-space:nowrap;
     }
 
     .status-list{
       display:grid;
-      gap:14px;
-      margin-bottom:24px;
+      gap:16px;
     }
 
     .status-card{
       background:#ffffff;
-      border:1px solid #e6e6e6;
-      border-radius:20px;
-      box-shadow:0 4px 14px rgba(0,0,0,.04);
-      padding:20px 24px;
+      border:1px solid #e8e8e8;
+      border-radius:22px;
+      box-shadow:0 4px 14px rgba(0,0,0,.035);
+      padding:21px 24px;
       display:flex;
       justify-content:space-between;
       align-items:center;
@@ -144,7 +158,8 @@
     .status-left{
       display:flex;
       align-items:center;
-      gap:14px;
+      gap:15px;
+      min-width:0;
     }
 
     .status-dot{
@@ -159,17 +174,14 @@
     }
 
     .status-dot.closed{
-      background:var(--red-status);
+      background:var(--red);
     }
 
     .status-title{
-      font-size:24px;
-      font-weight:900;
+      font-size:25px;
+      font-weight:950;
       color:#202124;
-    }
-
-    .status-note{
-      display:none;
+      line-height:1.15;
     }
 
     .badge{
@@ -177,10 +189,10 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-width:150px;
+      min-width:154px;
       padding:11px 18px;
       border-radius:999px;
-      font-weight:900;
+      font-weight:950;
       font-size:20px;
       text-align:center;
       border:2px solid transparent;
@@ -194,26 +206,18 @@
 
     .badge.closed{
       background:var(--red-soft);
-      color:var(--red-status);
+      color:var(--red);
       border-color:var(--red-line);
     }
 
-    .info-box{
-      background:var(--surface-soft);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:14px 16px;
-      color:var(--muted);
-      font-size:14px;
-      text-align:center;
-      margin-bottom:22px;
+    .link-card{
+      padding:18px;
     }
 
     .buttons{
       display:grid;
       grid-template-columns:1fr;
       gap:14px;
-      margin-top:8px;
     }
 
     .button{
@@ -222,12 +226,12 @@
       justify-content:center;
       text-decoration:none;
       text-align:center;
-      font-weight:900;
-      font-size:20px;
-      padding:15px 18px;
+      font-weight:950;
+      font-size:21px;
+      padding:17px 18px;
       border-radius:999px;
       border:2px solid transparent;
-      box-shadow:0 4px 14px rgba(0,0,0,.04);
+      box-shadow:0 4px 14px rgba(0,0,0,.035);
       transition:transform .15s ease, opacity .15s ease, background .15s ease;
     }
 
@@ -250,38 +254,61 @@
 
     .button.red{
       background:var(--red-soft);
-      color:var(--red-status);
+      color:var(--red);
       border-color:var(--red-line);
     }
 
     footer{
-      background:var(--surface);
-      border-top:1px solid var(--line);
+      max-width:920px;
+      margin:0 auto;
       text-align:center;
-      padding:20px 18px;
+      padding:8px 18px 18px;
       color:var(--muted);
       font-size:14px;
     }
 
     .footer-name{
       font-weight:900;
-      color:var(--text);
+      color:#202124;
       margin-bottom:4px;
     }
 
-    @media (min-width:700px){
+    @media (min-width:760px){
       .buttons{
         grid-template-columns:1fr 1fr 1fr;
       }
     }
 
     @media (max-width:620px){
+      .page{
+        padding:18px 10px;
+      }
+
+      .hero-card{
+        border-radius:26px;
+        padding:24px 16px 22px;
+      }
+
+      .logo-wrap{
+        width:min(300px, 82%);
+        border-radius:30px;
+      }
+
+      .brand-small{
+        font-size:21px;
+      }
+
       h1{
         font-size:44px;
+        letter-spacing:-1.2px;
       }
 
       .subtitle{
-        font-size:20px;
+        font-size:21px;
+      }
+
+      .date-card{
+        padding:11px 20px;
       }
 
       .date{
@@ -289,41 +316,45 @@
       }
 
       .status-card{
-        padding:18px;
+        padding:19px 18px;
       }
 
       .status-title{
-        font-size:21px;
+        font-size:22px;
       }
 
       .badge{
-        min-width:132px;
-        font-size:17px;
+        min-width:136px;
+        font-size:18px;
         padding:10px 14px;
       }
 
-      .status-dot{
-        width:16px;
-        height:16px;
-      }
-
       .button{
-        font-size:18px;
-        padding:14px 16px;
+        font-size:19px;
+        padding:15px 16px;
       }
     }
 
     @media (max-width:430px){
+      .page{
+        padding:14px 8px;
+      }
+
+      .hero-card,
+      .link-card{
+        border-radius:24px;
+      }
+
+      .logo-wrap{
+        width:min(285px, 86%);
+      }
+
       h1{
         font-size:38px;
       }
 
       .subtitle{
-        font-size:18px;
-      }
-
-      .date-card{
-        padding:11px 18px;
+        font-size:19px;
       }
 
       .date{
@@ -331,7 +362,7 @@
       }
 
       .calendar-icon{
-        font-size:24px;
+        font-size:23px;
       }
 
       .status-card{
@@ -349,16 +380,16 @@
 <body>
   <div class="page">
 
-    <header>
-      <div class="header-inner">
-        <img class="logo" src="logo-tiziano.png" alt="Eiscafe Tiziano Logo">
+    <section class="hero-card">
+      <div class="header">
+        <div class="logo-wrap">
+          <img class="logo" src="logo-tiziano.png" alt="Eiscafe Tiziano Logo">
+        </div>
 
-        <h1>Eiscafe Tiziano</h1>
+        <div class="brand-small">Eiscafe Tiziano</div>
+        <h1>Öffnungszeiten</h1>
         <div class="subtitle">Mitnehmen · Innen / Gästebereich · Lieferservice</div>
       </div>
-    </header>
-
-    <main>
 
       <section class="date-card">
         <div class="calendar-icon">📅</div>
@@ -370,10 +401,7 @@
         <div class="status-card">
           <div class="status-left">
             <span class="status-dot closed" id="dot-mitnehmen"></span>
-            <div>
-              <div class="status-title">Mitnehmen</div>
-              <div class="status-note">Eis direkt bei uns im Laden</div>
-            </div>
+            <div class="status-title">Mitnehmen</div>
           </div>
           <div class="badge closed" id="status-mitnehmen">Wird geladen...</div>
         </div>
@@ -381,10 +409,7 @@
         <div class="status-card">
           <div class="status-left">
             <span class="status-dot closed" id="dot-innenbereich"></span>
-            <div>
-              <div class="status-title">Innen / Gästebereich</div>
-              <div class="status-note">Sitzplätze im Eiscafe</div>
-            </div>
+            <div class="status-title">Innen / Gästebereich</div>
           </div>
           <div class="badge closed" id="status-innenbereich">Wird geladen...</div>
         </div>
@@ -392,27 +417,21 @@
         <div class="status-card">
           <div class="status-left">
             <span class="status-dot closed" id="dot-lieferservice"></span>
-            <div>
-              <div class="status-title">Lieferservice</div>
-              <div class="status-note">Eis bequem nach Hause bestellen</div>
-            </div>
+            <div class="status-title">Lieferservice</div>
           </div>
           <div class="badge closed" id="status-lieferservice">Wird geladen...</div>
         </div>
 
       </section>
+    </section>
 
-      <div class="info-box">
-        Der Status wird automatisch anhand unserer hinterlegten Öffnungszeiten angezeigt.
+    <section class="link-card">
+      <div class="buttons">
+        <a class="button blue" href="https://eiscafetizianomayen.github.io/Liefermenu/">zum Lieferservice-Menü</a>
+        <a class="button orange" href="https://eiscafetizianomayen.github.io/Liefergebiete/">Zu den Liefergebieten</a>
+        <a class="button red" href="https://eiscafetizianomayen.github.io/Oeffnungszeiten/">Zu den Öffnungszeiten</a>
       </div>
-
-      <section class="buttons">
-        <a class="button blue" href="https://eiscafetizianomayen.github.io/Liefermenu/">Lieferservice-Menü</a>
-        <a class="button orange" href="https://eiscafetizianomayen.github.io/Liefergebiete/">Liefergebiete</a>
-        <a class="button red" href="https://eiscafetizianomayen.github.io/Oeffnungszeiten/">Öffnungszeiten</a>
-      </section>
-
-    </main>
+    </section>
 
     <footer>
       <div class="footer-name">Eiscafe Tiziano</div>
@@ -445,21 +464,21 @@
       mitnehmen: {
         0: { open: "13:00", close: "21:00" },
         1: { closed: true },
-        2: { open: "12:00", close: "21:00" },
-        3: { open: "12:00", close: "21:00" },
-        4: { open: "12:00", close: "21:00" },
-        5: { open: "12:00", close: "21:00" },
-        6: { open: "12:00", close: "21:00" }
+        2: { open: "11:00", close: "21:00" },
+        3: { open: "11:00", close: "21:00" },
+        4: { open: "11:00", close: "21:00" },
+        5: { open: "11:00", close: "21:00" },
+        6: { open: "11:00", close: "21:00" }
       },
 
       innenbereich: {
         0: { open: "13:00", close: "21:00" },
         1: { closed: true },
-        2: { open: "12:00", close: "21:00" },
-        3: { open: "12:00", close: "21:00" },
-        4: { open: "12:00", close: "21:00" },
-        5: { open: "12:00", close: "21:00" },
-        6: { open: "12:00", close: "21:00" }
+        2: { open: "11:00", close: "21:00" },
+        3: { open: "11:00", close: "21:00" },
+        4: { open: "11:00", close: "21:00" },
+        5: { open: "11:00", close: "21:00" },
+        6: { open: "11:00", close: "21:00" }
       },
 
       lieferservice: {
